@@ -1,12 +1,12 @@
 call vice#Register('github:itchyny/lightline.vim')
 
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'powerline',
     \ 'active': {
         \ 'left': [
             \ ['mode', 'paste'],
-            \ ['fugitive', 'filename'],
-            \ ['ctrlpmark']
+            \ ['filename'],
+            \ ['fugitive', 'ctrlpmark'],
         \ ],
         \ 'right': [
             \ ['syntastic', 'lineinfo'],
@@ -16,7 +16,8 @@ let g:lightline = {
     \ },
     \ 'inactive': {
         \ 'left': [
-            \ ['mode'], ['filename']
+            \ ['mode'],
+            \ ['filename'],
         \ ],
         \ 'right': [
             \ ['lineinfo'],
@@ -24,13 +25,13 @@ let g:lightline = {
         \ ],
     \ },
     \ 'component_function': {
-        \ 'fugitive':     'MyFugitive',
-        \ 'filename':     'MyFilename',
-        \ 'fileformat':   'MyFileformat',
-        \ 'filetype':     'MyFiletype',
-        \ 'fileencoding': 'MyFileencoding',
-        \ 'mode':         'MyMode',
         \ 'ctrlpmark':    'CtrlPMark',
+        \ 'fileencoding': 'MyFileencoding',
+        \ 'fileformat':   'MyFileformat',
+        \ 'filename':     'MyFilename',
+        \ 'filetype':     'MyFiletype',
+        \ 'fugitive':     'MyFugitive',
+        \ 'mode':         'MyMode',
     \ },
     \ 'component_expand': {
         \ 'syntastic': 'SyntasticStatuslineFlag',
@@ -45,7 +46,7 @@ let g:lightline = {
 \ }
 
 function! MyModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : ''
 endfunction
 
 function! MyReadonly()
