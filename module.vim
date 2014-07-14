@@ -54,7 +54,7 @@ function! MyReadonly()
 endfunction
 
 function! MyFilename()
-  let fname = expand('%:t')
+  let fname = expand('%')
   return fname == 'ControlP' ? g:lightline.ctrlp_item :
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
