@@ -49,11 +49,10 @@ let g:unite_force_overwrite_statusline    = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
-
 let g:ctrlp_status_func = {
     \ 'main': 'vice#lightline#ctrlp_status_main',
     \ 'prog': 'vice#lightline#ctrlp_status_prog',
 \ }
 
-let g:tagbar_status_func = 'vice#lightline#tagbar_status'
-
+let g:tagbar_status_func  = 'vice#lightline#tagbar_status'
+let g:vice_syntastic_hook = 'vice#lightline#syntastic_hook'

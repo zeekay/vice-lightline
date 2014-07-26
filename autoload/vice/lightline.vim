@@ -81,3 +81,7 @@ func! vice#lightline#tagbar_status(current, sort, fname, ...) abort
     let g:lightline.fname = a:fname
     return lightline#statusline(0)
 endf
+
+func! vice#lightline#syntastic_hook()
+    call lightline#update()
+endf
