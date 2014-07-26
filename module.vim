@@ -6,10 +6,10 @@ let g:lightline = {
         \ 'left': [
             \ ['mode', 'paste'],
             \ ['filename'],
-            \ ['fugitive', 'ctrlpmark'],
+            \ ['fugitive', 'ctrlpmark', 'syntastic'],
         \ ],
         \ 'right': [
-            \ ['syntastic', 'lineinfo'],
+            \ ['lineinfo'],
             \ ['percent'],
             \ ['fileformat', 'fileencoding', 'filetype']
         \ ]
