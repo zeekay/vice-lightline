@@ -54,7 +54,7 @@ let g:ctrlp_status_func = {
     \ 'prog': 'vice#lightline#ctrlp_status_prog',
 \ }
 
-let g:tagbar_status_func  = 'vice#lightline#tagbar_status'
+let g:tagbar_status_func = 'vice#lightline#tagbar_status'
 
 " Add hook to update statusline on syntastic checks.
 if exists('g:vice.syntastic.hooks')

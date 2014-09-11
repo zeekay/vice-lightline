@@ -1,5 +1,7 @@
 func! vice#lightline#filename()
+    if &ft == 'startify' | return '' | endif
     let fname = expand('%')
+
     return fname == 'ControlP'                ? g:lightline.ctrlp_item :
          \ fname == '__Tagbar__'              ? g:lightline.fname :
          \ fname =~ '__Gundo\|NERD_tree'      ? '' :
@@ -12,19 +14,24 @@ func! vice#lightline#filename()
 endf
 
 func! vice#lightline#fileformat()
+    if &ft == 'startify' | return '' | endif
     return winwidth(0) > 70 ? &fileformat : ''
 endf
 
-func! vice#lightline#filetype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endf
-
 func! vice#lightline#fileencoding()
+    if &ft == 'startify' | return '' | endif
     return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endf
 
+func! vice#lightline#filetype()
+    if &ft == 'startify' | return '' | endif
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endf
+
 func! vice#lightline#mode()
+    if &ft == 'startify' | return '' | endif
     let fname = expand('%:t')
+
     return fname == '__Tagbar__'        ? 'Tagbar' :
          \ fname == 'ControlP'          ? 'CtrlP' :
          \ fname == '__Gundo__'         ? 'Gundo' :
