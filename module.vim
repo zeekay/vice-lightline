@@ -60,3 +60,6 @@ let g:tagbar_status_func = 'vice#lightline#tagbar_status'
 if exists('g:vice.syntastic.hooks')
     call add(g:vice.syntastic.hooks, 'lightline#update')
 endif
+
+" Override statusline changes made by vim-startify
+autocmd User Startified call lightline#update()
