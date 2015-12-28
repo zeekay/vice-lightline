@@ -6,7 +6,7 @@ let g:lightline = {
         \ 'left': [
             \ ['mode', 'paste'],
             \ ['filename'],
-            \ ['fugitive', 'ctrlpmark', 'syntastic'],
+            \ ['fugitive', 'ctrlpmark', 'syntastic', 'neomake'],
         \ ],
         \ 'right': [
             \ ['lineinfo'],
@@ -35,9 +35,11 @@ let g:lightline = {
     \ },
     \ 'component_expand': {
         \ 'syntastic': 'SyntasticStatuslineFlag',
+        \ 'neomake':   'vice#lightline#neomake',
     \ },
     \ 'component_type': {
         \ 'syntastic': 'error',
+        \ 'neomake':   'error',
     \ },
     \ 'subseparator': {
         \ 'left': '⋅',

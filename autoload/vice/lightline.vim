@@ -88,3 +88,26 @@ func! vice#lightline#tagbar_status(current, sort, fname, ...) abort
     let g:lightline.fname = a:fname
     return lightline#statusline(0)
 endf
+
+func! vice#lightline#neomake()
+    if !exists('*neomake#statusline#LoclistCounts')
+        return ''
+    endif
+
+    " Count all the errors, warnings
+    let total = 0
+
+    for v in values(neomake#statusline#LoclistCounts())
+        let total += v
+    endfor
+
+    for v in items(neomake#statusline#QflistCounts())
+        let total += v
+    endfor
+
+    if total == 0
+        return ''
+    endif
+
+    return 'line '.getloclist(0)[0].lnum. ', 1 of '.total
+endf
