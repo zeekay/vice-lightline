@@ -57,8 +57,8 @@ let g:ctrlp_status_func = {
 let g:tagbar_status_func = 'vice#lightline#tagbar_status'
 
 " Add hook to update statusline on syntastic checks.
-if exists('g:vice.syntastic.hooks')
-    call add(g:vice.syntastic.hooks, 'lightline#update')
+if exists('g:vice.make.hooks')
+    call add(g:vice.make.hooks, 'lightline#update')
 endif
 
 " Override statusline changes made by vim-startify
