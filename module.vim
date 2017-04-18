@@ -65,3 +65,6 @@ endif
 
 " Override statusline changes made by vim-startify
 autocmd User Startified call lightline#update()
+
+" Fix junk in Hyper
+set t_RV=
