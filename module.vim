@@ -11,7 +11,8 @@ let g:lightline = {
         \ 'right': [
             \ ['lineinfo'],
             \ ['percent'],
-            \ ['fileformat', 'fileencoding', 'filetype']
+            \ ['fileformat', 'fileencoding', 'filetype'],
+            \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
         \ ]
     \ },
     \ 'inactive': {
