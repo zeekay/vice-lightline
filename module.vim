@@ -37,10 +37,18 @@ let g:lightline = {
     \ 'component_expand': {
         \ 'syntastic': 'SyntasticStatuslineFlag',
         \ 'neomake':   'vice#lightline#neomake',
+        \ 'linter_checking': 'lightline#ale#checking',
+        \ 'linter_warnings': 'lightline#ale#warnings',
+        \ 'linter_errors': 'lightline#ale#errors',
+        \ 'linter_ok': 'lightline#ale#ok',
     \ },
     \ 'component_type': {
         \ 'syntastic': 'error',
         \ 'neomake':   'error',
+        \ 'linter_checking': 'left',
+        \ 'linter_warnings': 'warning',
+        \ 'linter_errors': 'error',
+        \ 'linter_ok': 'left',
     \ },
     \ 'subseparator': {
         \ 'left': '⋅',
@@ -51,6 +59,11 @@ let g:lightline = {
 let g:unite_force_overwrite_statusline    = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+
+let g:lightline#ale#indicator_checking = ""
+let g:lightline#ale#indicator_warnings = "w:"
+let g:lightline#ale#indicator_errors   = "e:"
+let g:lightline#ale#indicator_ok       = ""
 
 let g:ctrlp_status_func = {
     \ 'main': 'vice#lightline#ctrlp_status_main',
