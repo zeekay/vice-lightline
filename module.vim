@@ -12,7 +12,7 @@ let g:lightline = {
             \ ['lineinfo'],
             \ ['percent'],
             \ ['fileformat', 'fileencoding', 'filetype'],
-            \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+            \ ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
         \ ]
     \ },
     \ 'inactive': {
