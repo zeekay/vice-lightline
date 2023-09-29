@@ -1,7 +1,7 @@
 call vice#Register('github:itchyny/lightline.vim')
 
 let g:lightline = {
-    \ 'colorscheme': 'powerline',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ 'active': {
         \ 'left': [
             \ ['mode', 'paste'],
@@ -78,7 +78,7 @@ if exists('g:vice.make.hooks')
 endif
 
 " Override statusline changes made by vim-startify
-autocmd User Startified call lightline#update()
+" autocmd User Startified call lightline#update()
 
 " Fix junk in Hyper
 set t_RV=
